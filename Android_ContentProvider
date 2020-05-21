@@ -1,0 +1,35 @@
+private void fetchContats(){
+
+        ArrayList<String> contacts = new ArrayList<>();
+
+        Uri uri = DentalContract.BASE_CONTENT_URI;
+
+        String[] projection = {DentalContract.ClinicEntry.COLUMN_CLINIC_ID,
+                DentalContract.ClinicEntry.COLUMN_NAME_CLINIC,
+                DentalContract.ClinicEntry.COLUMN_ADDRESS_CLINIC,
+                DentalContract.ClinicEntry.COLUMN_TELEPHONE_CLINIC,
+                DentalContract.ClinicEntry.COLUMN_EMAIL_CLINIC};
+
+        String selection = null;
+        String [] selectionsArgs = null;
+        String sortOrder = null;
+
+
+        Cursor c = getContentResolver().query(uri, projection, selection, selectionsArgs, sortOrder);
+
+        while(c.moveToNext()){
+
+            String id = c.getString(c.getColumnIndex(DentalContract.ClinicEntry.COLUMN_CLINIC_ID));
+            String name = c.getString(c.getColumnIndex(DentalContract.ClinicEntry.COLUMN_NAME_CLINIC));
+            String add = c.getString(c.getColumnIndex(DentalContract.ClinicEntry.COLUMN_ADDRESS_CLINIC));
+            String phone = c.getString(c.getColumnIndex(DentalContract.ClinicEntry.COLUMN_TELEPHONE_CLINIC));
+            String email = c.getString(c.getColumnIndex(DentalContract.ClinicEntry.COLUMN_EMAIL_CLINIC));
+
+            Log.i("@Dental","Clinic -" + name + " end - " + add + " Telefone " + phone + " email" + email );
+
+            contacts.add( name + "\n" + add + "\n" + phone + "\n" + email );
+
+            listViewContatos.setAdapter( new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,contacts));
+
+        }
+    }
