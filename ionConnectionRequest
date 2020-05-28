@@ -1,0 +1,23 @@
+ class listaContatos extends AsyncTask<String, String, String> {
+//        String url = HOST + "read.php";
+
+//        Ion.with(getBaseContext())
+//                .load(url)
+//                .asJsonArray()
+//                .setCallback(new FutureCallback<JsonArray>() {
+//                    @Override
+//                    public void onCompleted(Exception e, JsonArray result) {
+//                        ClinicDao crud = new ClinicDao( getBaseContext() );
+//                        for(int i = 0; i < result.size(); i++)
+//                        {
+//                            JsonObject obj = result.get(i).getAsJsonObject();
+//                            String name = obj.get("name").getAsString();
+//                            String end = obj.get("end").getAsString();
+//                            String tel = obj.get("tel").getAsString();
+//                            String email = obj.get("email").getAsString();
+//
+//                            crud.insertClinic(name,end,tel,email);
+//                        }
+//                    }
+//                });
+}
