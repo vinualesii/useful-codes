@@ -31,7 +31,7 @@ public class ConnectionTask extends AsyncTask<String, Void, String> {
                 // Construct the URL for the OpenWeatherMap query
                 // Possible parameters are avaiable at OWM's forecast API page, at
                 // http://openweathermap.org/API#forecast
-                final String FORECAST_BASE_URL = "http://openfix.dx.am/dental/clinica/read.php";
+                final String FORECAST_BASE_URL = "http://xxxxxxxxxx/xxxxxxx/xxxxxxxxx/xxxxxxxxxxxxxx.php";
 
 //            Uri builtUri = Uri.parse( FORECAST_BASE_URL ).buildUpon().build();
 //
